@@ -26,3 +26,7 @@ dist-ssr
 # 미사용 에셋 팩 (용량 절약)
 public/assets/Sprout Lands*
 public/assets/Basic Animal*
+
+# 기획/작업 문서 (비공개)
+RULES.md
+기획서*
