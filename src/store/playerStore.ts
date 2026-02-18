@@ -78,17 +78,17 @@ export const usePlayerStore = create<GameStore>((set, get) => ({
   // ===== 자원 관리 =====
   hasResource: (currency, amount) => {
     const state = get();
-    const current = (state as Record<string, unknown>)[currency] as number ?? 0;
+    const current = (state as unknown as Record<string, unknown>)[currency] as number ?? 0;
     return current >= amount;
   },
 
   spendResource: (currency, amount) => set(state => {
-    const current = (state as Record<string, unknown>)[currency] as number ?? 0;
+    const current = (state as unknown as Record<string, unknown>)[currency] as number ?? 0;
     return { [currency]: current - amount } as Partial<GameStore>;
   }),
 
   addResource: (currency, amount) => set(state => {
-    const current = (state as Record<string, unknown>)[currency] as number ?? 0;
+    const current = (state as unknown as Record<string, unknown>)[currency] as number ?? 0;
     return { [currency]: current + amount } as Partial<GameStore>;
   }),
 

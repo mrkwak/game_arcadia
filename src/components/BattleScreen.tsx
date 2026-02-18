@@ -36,11 +36,9 @@ export const BattleScreen = ({ stageId, onBattleEnd, onRetreat }: BattleScreenPr
   const deck = decks[activeDeck];
   const stage = findStageById(stageId);
 
-  const [spritesReady, setSpritesReady] = useState(false);
-
   /** 스프라이트 프리로드 */
   useEffect(() => {
-    preloadAllSprites().then(() => setSpritesReady(true));
+    preloadAllSprites();
   }, []);
 
   /** 전투 상태 초기화 */

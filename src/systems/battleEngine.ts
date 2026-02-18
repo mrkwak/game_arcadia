@@ -66,8 +66,8 @@ export const createBattleUnit = (
 /** 전투 초기 상태 생성 */
 export const createBattleState = (
   stageId: string,
-  deckCardIds: readonly string[],
-  cardLevels: Record<string, number>,
+  _deckCardIds: readonly string[],
+  _cardLevels: Record<string, number>,
 ): BattleState | null => {
   const stage = findStageById(stageId);
   if (!stage) return null;
@@ -222,7 +222,7 @@ const applyDamageEvents = (
 /** 힐러 유닛 업데이트 (아군 회복) */
 const processHealing = (
   allies: BattleUnit[],
-  dt: number,
+  _dt: number,
 ): BattleUnit[] =>
   allies.map(unit => {
     if (!unit.skill?.heal || unit.hp <= 0 || unit.skillTimer > 0) return unit;
